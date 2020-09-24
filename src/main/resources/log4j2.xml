@@ -5,7 +5,6 @@
       <PatternLayout pattern="%d{ISO8601} %-5p (%t) [%c(%M:%L)] %m%n"/>
     </Console>
   </Appenders>
-  l
   <Loggers>
     <Logger name="com.aorkado" level="debug" additivity="false">
       <AppenderRef ref="LogToConsole"/>

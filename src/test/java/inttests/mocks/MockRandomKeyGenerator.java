@@ -1,4 +1,4 @@
-package com.aorkado.mocks;
+package inttests.mocks;
 
 import com.aorkado.RandomKeyGenerator;
 import io.micronaut.context.annotation.Replaces;

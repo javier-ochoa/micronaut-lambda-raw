@@ -13,20 +13,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-public class ExampleRequestHandlerUnitTest {
+public class ExampleRequestHandlerExecuterUnitTest {
 
   private static final String RANDOM_KEY = "12345";
 
   private RandomKeyGenerator randomKeyGenerator;
-  private ExampleRequestHandler requestHandler;
+  private ExampleRequestHandlerExecuter executer;
 
   @BeforeEach
   public void beforeEach() {
     randomKeyGenerator = mock(RandomKeyGenerator.class);
     doReturn(RANDOM_KEY).when(randomKeyGenerator).generate();
 
-    requestHandler = new ExampleRequestHandler();
-    requestHandler.setRandomKeyGenerator(randomKeyGenerator);
+    executer = new ExampleRequestHandlerExecuter();
+    executer.setRandomKeyGenerator(randomKeyGenerator);
   }
 
   @AfterEach
@@ -35,7 +35,7 @@ public class ExampleRequestHandlerUnitTest {
 
   @Test
   public void execute_When_NoInput_Then_GenerateRandomKey() {
-    String result = requestHandler.execute(null);
+    String result = executer.execute(null);
 
     //****//
 
@@ -50,7 +50,7 @@ public class ExampleRequestHandlerUnitTest {
   public void execute_When_Input_Then_ReturnInputAsKey() {
     String inputStr = "foobar";
 
-    String result = requestHandler.execute(inputStr);
+    String result = executer.execute(inputStr);
 
     //****//
 
